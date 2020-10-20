@@ -1,1 +1,257 @@
-Hello World
+<HTML>
+<HEAD>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41724757-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41724757-1');
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7;IE=9;IE=10;IE=11;IE=12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../style_202010.css" type="text/css" />
+<TITLE>ＥＭＡＮの物理学・力学・運動方程式</TITLE>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      Vec:    ['{{\\boldsymbol #1}}',1],
+      diff: '{\\,\\mathrm d}',
+      dif:    ['{\\frac{\\mathrm{d} #1}{\\mathrm{d} #2}}',2],
+      ddif:   ['{\\frac{\\mathrm{d}^2#1}{\\mathrm{d} #2^2}}',2],
+      pdif:   ['{\\frac{\\partial #1}{\\partial #2}}',2],
+      pddif:  ['{\\frac{\\partial^2 #1}{\\partial #2^2}}',2],
+      pdddif: ['{\\frac{\\partial^3 #1}{\\partial #2^3}}',2],
+      thdif:  ['{\\left(\\frac{\\partial #1}{\\partial #2}\\right)_{#3}}',3],
+      pdifline:  ['{\\partial #1/\\partial #2}',2],
+      henbun:   ['{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}\\delta #2 \\delta#3}',3],
+      henbibun: ['{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}',3],
+      vardif:  ['{\\frac{\\delta #1}{\\delta #2}}',2],
+      kinji:  '{\\,\\fallingdotseq\\,}',
+      dint: '{\\int\\!\\!\\!\\int}',
+      tint: '{\\int\\!\\!\\!\\int\\!\\!\\!\\int}',
+      cris:  ['{{\\it \\Gamma}^{#1}_{\\ #2}}',2],
+      met:  ['{g_{\\scriptscriptstyle #1 \\kern-.03em \\scriptscriptstyle #2}}',2],
+      sub:  ['{_{\\scriptscriptstyle #1}}',1],
+      sup:  ['{^{\\scriptscriptstyle #1}}',1],
+      para: '{{}_{/\\kern-.15em/}}',
+      Rot: '{\\mathrm{rot}}',
+      Div: '{\\mathrm{div}}',
+      Grad: '{\\mathrm{grad}}',
+      bra:  ['{\\langle #1|}',1],
+      ket:  ['{|#1 \\rangle}',1],
+      sladif: '{\\partial\\hspace{-0.5em}\\raise{0.1em}/ \\,}',
+    }
+  }
+});
+</script>
+<script async src="../MathJax2_7_5/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2102965965451578",
+    enable_page_level_ads: true
+  });
+</script>
+
+</HEAD>
+
+<BODY>
+<div class="header">
+
+<noscript>
+<br><br>
+<table border="2" cellpadding="5" bgcolor="white"><tr><td>
+このサイトでは数式を美しく表示するために JavaScript の機能を利用しています。<br>
+<font color="red"><b>お使いのブラウザでは JavaScript が無効になっています。</b></font><br>
+<br>
+一昔前はセキュリティの問題により JavaScript を無効にすることが推奨されていましたが、<br>
+現在では多くの問題が改善されてきており、<br>
+最新のバージョンのブラウザではむしろ多くの利便性を享受するために<br>
+有効にしておくことの方が推奨されています。<br>
+<br>
+是非、最新版のブラウザで、JavaScript を有効にして美しい数式表示をお楽しみください。
+</td></tr></table>
+<br><br>
+</noscript>
+
+<a href="https://amzn.to/2H4Ki4i"><img src="../mybook/shumideryo_cm2.png" class="mycm"><a><br><br>
+
+<H1>運動方程式</H1>
+
+
+
+<br><br>
+[<A href="./mass.html">前の記事へ</A>]　
+[<A href = "./contents.html">力学の目次へ</A>]　
+[<A href="./act_react.html">次の記事へ</A>]
+</div>
+<div class="maintxt">
+
+<HR>
+<P>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- head -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2102965965451578"
+     data-ad-slot="8838953641"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div class="safari">
+
+</div>
+<p>
+<hr>
+<H4></H4>
+<div class="safari">
+　初めの話では加速度を<span class="eqinline">\( a \)</span>と表して<span class="eqinline">\( F = m a \)</span>という式を導いたが、大学ではこの式を微分を使って、
+</div>
+<div class="display">
+\[
+\begin{align*}
+F = m \ddif{x}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+と表すのが普通である。これを「<strong><font color="red">ニュートンの運動方程式</font></strong>」と呼ぶ。この書き方の方が深い意味を含んでいて状況を正しく記述できる。一度これに慣れたらもう戻れないほど便利なのだ。力学が誕生したニュートンの時代からこの方法は存在する。微分というのはニュートンやライプニッツなどが力学を正確に書き表すために独自に編み出した方法だからである。
+</div>
+<P>
+<div class="safari">
+　この先まだしばらくは微分の知識を必要とすることはないが、物理では非常によく使う大切な概念なのでここでごく簡単に説明しておこう。少しずつ慣れておいた方がいい。
+</div>
+<p>
+<hr>
+<H4>微分の考え方</H4>
+<div class="safari">
+　まず、速さとは何であろうか。簡単に言えば物体が動いた距離をそれに掛かった時間で割ったものである。しかし長い距離を移動する間、ずっと同じ速さだとは限らない。速さは変化するのが普通である。すると「今の速さ」は幾つだ？ということが気になり始める。しかしどう考えたらいいのだろう。「今この瞬間の速さ」と言われても、ある瞬間には物体はただそこにあるだけであって動いてはいない。
+</div>
+<P>
+<div class="safari">
+　いや、本当に動いていないわけではない。「ほとんど動いていない」だけだ。ごく短い一瞬の時間内に、ごくわずかに動いた距離さえ分かれば速さは計算できる。無限に小さい時間間隔を考えて計算した値はほとんど「その瞬間の速さ」と呼んで差し支えがない。ごく短い時間内では速さだってほとんど変化しないのだから気にすることではない。
+</div>
+<P>
+<div class="safari">
+　つまりごく短い時間間隔<span class="eqinline">\( \Delta t \)</span>と、その間に動いたごく短い距離<span class="eqinline">\( \Delta x \)</span> を考えて<span class="eqinline">\( \Delta x / \Delta t \)</span>という量を作り、<span class="eqinline">\( \Delta t \)</span>を無限に 0 にまで近付けたときのこの量の値を瞬間の速さ<span class="eqinline">\( v \)</span>であると定義して、次のような記号で表すのである。
+</div>
+<div class="display">
+\[
+\begin{align*}
+v = \dif{x}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+　0 で割り算することは数学的に矛盾が出るので反則になるのだが、分母の値を徐々に 0 に近付けて、その値がどうなるかを考えることは許されている。これが微分だ。
+</div>
+<p>
+<hr>
+<H4>微分の応用</H4>
+<div class="safari">
+　この考えを使って、もう一度先ほどの力積の話からやり直してみよう。力の大きさと時間を掛けたものを力積と呼ぶのだったが、先ほどのやり方では物体に加える力<span class="eqinline">\( F \)</span>の大きさが<span class="eqinline">\( t \)</span>秒間ずっと変わらず一定だという仮定の中で計算していたことになる。そんな珍しい状況は受験問題にはよく出てくるが現実には滅多にないことだ。普通は一瞬のパンチにしても、徐々に力が加わり、徐々に力が抜けて行くものだ。
+</div>
+<P>
+<div class="safari">
+　このような現実的な場面にもちゃんとあてはめることのできる議論をするにはどうしたらよいだろうか。ここで先ほどと同じ、微少時間の考えを使うのである。本当に短い一瞬の時間<span class="eqinline">\( \Delta t \)</span>だけに限れば、その間の力<span class="eqinline">\( F \)</span>はほとんど一定だと見なせる。そのごく短時間の力積を<span class="eqinline">\( F\ \Delta t \)</span>と表そう。その力積によって運動量はわずかに変化するから、それを<span class="eqinline">\( \Delta p \)</span>と書こう。つまり、<span class="eqinline">\( F\ \Delta t = \Delta p \)</span>が言える。これを変形して<span class="eqinline">\( F = \Delta p/\Delta t \)</span>と書き、<span class="eqinline">\( \Delta t \)</span>を無限小に近付けた式は、
+</div>
+<div class="display">
+\[
+\begin{align*}
+F = \dif{p}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+だと言える。力とは運動量の時間的な変化率であるという意味だ。ニュートンの運動方程式をこのように書き表すこともあるので心のどこかに留めておいてもらいたい。
+</div>
+<P>
+<div class="safari">
+　しかし運動量が変化するのは、普通は物体の速度変化だけが原因である。物体が壊れなければ質量<span class="eqinline">\( m \)</span>の値が勝手に変化する事はないからである。それで運動量の変化を<span class="eqinline">\( \Delta p = m\ \Delta v \)</span>と書くことができるだろう。つまり、<span class="eqinline">\( F\ \Delta t = m\ \Delta v \)</span>であり、変形すれば<span class="eqinline">\( F = m\ \Delta v/ \Delta t \)</span>であり、前と同じように、
+</div>
+<div class="display">
+\[
+\begin{align*}
+F = m \dif{v}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+という式が出来あがる。<span class="eqinline">\( v \)</span>は移動距離を時間で微分したものであり、ここではそれがさらに微分されているのだから、
+</div>
+<div class="display">
+\[
+\begin{align*}
+F = m \ddif{x}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+と書けるのである。この式は加速度が一定でない場合にも使える。力が変化するような場面であっても、そのどの瞬間にも当てはめて使える式だということだ。
+</div>
+<P>
+<div class="safari">
+　加速度を一定値<span class="eqinline">\( a \)</span>で表す幼いやり方は早い内に卒業しておこう。何しろ、力学は生まれた時から微分の考え方を使ってきたのだから。
+</div>
+<p>
+<hr>
+<br>
+<div class="safari">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-format="autorelaxed"
+	data-ad-client="ca-pub-2102965965451578"
+	data-ad-slot="1795778038"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+</div>
+<div class="footer">
+
+<P>
+<hr>
+
+<br>
+<a href="../store/top.html">趣味の物理学書店<a><br><br>
+
+<div class="amazon_ad">
+</div>
+
+<HR>
+<br>
+<br>
+
+[<A href="./mass.html">前の記事へ</A>]　
+[<A href = "./contents.html">力学の目次へ</A>]　
+[<A href="./act_react.html">次の記事へ</A>]
+
+<br>
+<br>
+
+</div>
+
+</BODY>
+</HTML>
