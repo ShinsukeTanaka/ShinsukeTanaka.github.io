@@ -1,207 +1,258 @@
-<!DOCTYPE html>
-<html lang="en-uk">
-    <head>
-         
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>What is force?</title>
-        <style>
 
-    html body {
-        font-family: 'Alegreya', sans-serif;
-        background-color: white;
-    }
-
-    :root {
-        --accent: #330088;
-        --border-width:  5px ;
-    }
-
-</style>
-
-
-<link rel="stylesheet" href="https://vrutten.github.io/css/main.css">
-
-
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
-
-
-<link rel="stylesheet" href="https://vrutten.github.io/css/academicons.css"/>
-
-
-
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
- 
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
+<HTML>
+<HEAD>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41724757-1"></script>
 <script>
-    $(document).on('click', function() {
-        $('.collapse').collapse('hide');
-    })
-</script> <meta name="generator" content="Hugo 0.76.5" />
-   </head>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <body>
-         
-        <nav class="navbar navbar-default navbar-fixed-top">
+  gtag('config', 'UA-41724757-1');
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7;IE=9;IE=10;IE=11;IE=12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../style_202010.css" type="text/css" />
+<TITLE>ＥＭＡＮの物理学・力学・運動方程式</TITLE>
 
-            <div class="container">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      Vec:    ['{{\\boldsymbol #1}}',1],
+      diff: '{\\,\\mathrm d}',
+      dif:    ['{\\frac{\\mathrm{d} #1}{\\mathrm{d} #2}}',2],
+      ddif:   ['{\\frac{\\mathrm{d}^2#1}{\\mathrm{d} #2^2}}',2],
+      pdif:   ['{\\frac{\\partial #1}{\\partial #2}}',2],
+      pddif:  ['{\\frac{\\partial^2 #1}{\\partial #2^2}}',2],
+      pdddif: ['{\\frac{\\partial^3 #1}{\\partial #2^3}}',2],
+      thdif:  ['{\\left(\\frac{\\partial #1}{\\partial #2}\\right)_{#3}}',3],
+      pdifline:  ['{\\partial #1/\\partial #2}',2],
+      henbun:   ['{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}\\delta #2 \\delta#3}',3],
+      henbibun: ['{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}',3],
+      vardif:  ['{\\frac{\\delta #1}{\\delta #2}}',2],
+      kinji:  '{\\,\\fallingdotseq\\,}',
+      dint: '{\\int\\!\\!\\!\\int}',
+      tint: '{\\int\\!\\!\\!\\int\\!\\!\\!\\int}',
+      cris:  ['{{\\it \\Gamma}^{#1}_{\\ #2}}',2],
+      met:  ['{g_{\\scriptscriptstyle #1 \\kern-.03em \\scriptscriptstyle #2}}',2],
+      sub:  ['{_{\\scriptscriptstyle #1}}',1],
+      sup:  ['{^{\\scriptscriptstyle #1}}',1],
+      para: '{{}_{/\\kern-.15em/}}',
+      Rot: '{\\mathrm{rot}}',
+      Div: '{\\mathrm{div}}',
+      Grad: '{\\mathrm{grad}}',
+      bra:  ['{\\langle #1|}',1],
+      ket:  ['{|#1 \\rangle}',1],
+      sladif: '{\\partial\\hspace{-0.5em}\\raise{0.1em}/ \\,}',
+    }
+  }
+});
+</script>
+<script async src="../MathJax2_7_5/MathJax.js?config=TeX-AMS_CHTML">
+</script>
 
-                <div class="navbar-header">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2102965965451578",
+    enable_page_level_ads: true
+  });
+</script>
 
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+</HEAD>
 
-                </div>
+<BODY>
+<div class="header">
 
-                <div class="collapse navbar-collapse">
+<noscript>
+<br><br>
+<table border="2" cellpadding="5" bgcolor="white"><tr><td>
+このサイトでは数式を美しく表示するために JavaScript の機能を利用しています。<br>
+<font color="red"><b>お使いのブラウザでは JavaScript が無効になっています。</b></font><br>
+<br>
+一昔前はセキュリティの問題により JavaScript を無効にすることが推奨されていましたが、<br>
+現在では多くの問題が改善されてきており、<br>
+最新のバージョンのブラウザではむしろ多くの利便性を享受するために<br>
+有効にしておくことの方が推奨されています。<br>
+<br>
+是非、最新版のブラウザで、JavaScript を有効にして美しい数式表示をお楽しみください。
+</td></tr></table>
+<br><br>
+</noscript>
 
-                    
-                        <ul class="nav navbar-nav">
-                            
-                                <li><a href="/">Home</a></li>
-                            
-                                <li><a href="/publications/">Publications</a></li>
-                            
-                                <li><a href="/projects/">Projects</a></li>
-                            
-                                <li><a href="/physics/">Physics</a></li>
-                            
-                                <li><a href="/positions/">Me</a></li>
-                            
-                                <li><a href="/contact/">Contact</a></li>
-                            
-                        </ul>
-                    
+<a href="https://amzn.to/2H4Ki4i"><img src="../mybook/shumideryo_cm2.png" class="mycm"><a><br><br>
 
-                    
-                        <ul class="nav navbar-nav navbar-right">
-                            
-                                <li class="navbar-icon"><a href="https://scholar.google.com/citations?user=DDrMMRoAAAAJ&amp;hl=en&amp;oi=ao" target="_blank"><i class="ai ai-google-scholar"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://github.com/vrutten/" target="_blank"><i class="fa fa-github"></i></a></li>
-                            
-                        </ul>
-                    
-
-                </div>
-
-            </div>
-
-        </nav>
+<H1>運動方程式</H1>
 
 
-<main>
-    <div><a href=".." style="font-size: 200%;"><i class="fa fa-arrow-up"></i></a></div>
-    <br>
-    
-    <br>
-    <h1>What is force?</h1>
-    <br>
-    <div style="display: inline-block; position: relative; margin-left:1em; margin-right: 1em; align: left;">
-    
-    </div>
 
-    
-    <br>
-    <br>
-    <div class="text-justify">
-    
-    </div>
-    <br>
-    <div class="text-justify"><p>Dynamics is easy. The point is that a static object is always static, and a moving object is always moving with same velocity, unless there is friction. This is the “law of inertia’.</p>
-
-<p>A static object starts moving, if force acts on it. If force acts on a moving object, it changes velocity. If it is in the right condition, the moving object might stop moving. Our environment usually has “friction”, so it is very common that a moving object stops moving, but if there is no friction, stopping movement is extremely difficult.</p>
-
-<p>Next, I’d like to talk about what is force, but it will be philosophical, if we talk about it deeply (more on this later).</p>
-
-<p>We can discuss physics in different ways if we change points of view. Here, I am trying to explain it from a different angle from conventional physics textbooks. Definitions are extremely important for scientific discussions. It is confusing if you discuss something without deciding the premise first. Some people argue about something whilst changing the premise, but such discussions are not reliable. We should be suspicious of such people.</p>
-
-<h3 id="momentum-and-force">Momentum and Force</h3>
-
-<p>Here, let’s consider that <strong>there is force if an object changes its movement</strong>.  <strong>A thing which changes movement of an object is force</strong>.</p>
-
-<p>The force should have an amplitude, but how should we decide it? Let’s decide it by how much the movement of an object is changed. Then, what is movement of an object? Is it its velocity? It shouldn’t be only velocity. Even for the same velocity, we should consider that there are heavy things and light things. From our experience, we can see that we need strong forces to move a heavy objects.</p>
-
-<p>For example we feel more fatigue when we stop a slowly moving train than when we stop a very fast tennis ball with our bare hand. I think. I don’t want to experience such things. Oh, yes, a car! I have experienced pushing a car. It was very hard to stop the car, once it started to move. I’ve seen the flipping of the direction of steam locomotive only with a turntable and human strength, and it looked very hard too.</p>
-
-<p>So, let’s multiply the velocity with the weight of the object. This is called “momentum” in the field of physics. The heavier the object is, the larger the momentum is. And, the bigger the velocity is, the larger the momentum is, too.</p>
-
-<p><span  class="math">\[p = m v\]</span></p>
-
-<p>where $p$ is momentum, $m$ is weight and $v$ velocity.</p>
-
-<p>If you look at this, it is true that the momentum are same if an object has 2 in weight and 1 in velocity, or 1 in weight and 2 in velocity. It is excellent if you are wondering whether this is true, but it is not meaningful right now. It is just defining a quantity, “momentum”, as it is, and if it was not convenient for us, we just define better quantity for our purpose. Physics has been developed just like that way. Actually, the definition of the “momentum” is very convenient and this idea helps us a lot to understand the world’s nature without contradiction and in a simple manner.</p>
-
-<p><strong>Force just indicates how much the momentum is changing.</strong> However, the result should depend on the duration of acting force as well. Of course, it will have larger change if the force acts over a longer period of time. Thus, let's call the quantity that multiplies time with force “impulse”. Impuse should be equivalent as momentum. No. I should change the way of this expression. I just define the unit of force as such, such that we can state “impulse is equivalent to momentum”.</p>
-
-<p><span  class="math">\[p = F t\]</span></p>
-
-<p>This formula is just $m\cdot v= Ft$, and it is equivalent that we defined the unit of force with “the force to accelerate an object with 1 kg to 1m/s within 1s is 1N”.
-If we transform this, it gives:</p>
-
-<p><span  class="math">\[F = m v/t\]</span></p>
-
-<p>And $v/t$ is defined as acceleration, so if I replace it by $a$, we get:</p>
-
-<p><span  class="math">\[F = ma\]</span></p>
-
-<p>We get this equation in high school.</p>
-
-<p>In many classes, lecturers directly define that 1 N is the force which results in a 1 kg of object to accelerating at 1$\text{m/s}^2$ in the direction of applied motion. I am not against this, and I think it is clear and straight forward. However, it could give the impression that momentum and force are very different concepts.</p>
-
-<p>We can address physics in many different ways, and each ways has its pros and cons. I think we can truly say we have understood something, when we understand the differences of these ways.</p>
-
-<p>Translated by <a href="https://www.janelia.org/people/shinsuke-tanaka " target="_blank"> Shinsuke Tanaka</a>  and edited by me.</p>
+<br><br>
+[<A href="./mass.html">前の記事へ</A>]　
+[<A href = "./contents.html">力学の目次へ</A>]　
+[<A href="./act_react.html">次の記事へ</A>]
 </div>
-    
-    
-    
+<div class="maintxt">
 
+<HR>
+<P>
 
-</main>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- head -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2102965965451578"
+     data-ad-slot="8838953641"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
-        
-    </body>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$','$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  
-    window.addEventListener('load', (event) => {
-        document.querySelectorAll("mjx-container").forEach(function(x){
-          x.parentElement.classList += 'has-jax'})
-      });
-  
-  </script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-</html>
+<div class="safari">
+
+</div>
+<p>
+<hr>
+<H4></H4>
+<div class="safari">
+　初めの話では加速度を<span class="eqinline">\( a \)</span>と表して<span class="eqinline">\( F = m a \)</span>という式を導いたが、大学ではこの式を微分を使って、
+</div>
+<div class="display">
+\[
+\begin{align*}
+F = m \ddif{x}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+と表すのが普通である。これを「<strong><font color="red">ニュートンの運動方程式</font></strong>」と呼ぶ。この書き方の方が深い意味を含んでいて状況を正しく記述できる。一度これに慣れたらもう戻れないほど便利なのだ。力学が誕生したニュートンの時代からこの方法は存在する。微分というのはニュートンやライプニッツなどが力学を正確に書き表すために独自に編み出した方法だからである。
+</div>
+<P>
+<div class="safari">
+　この先まだしばらくは微分の知識を必要とすることはないが、物理では非常によく使う大切な概念なのでここでごく簡単に説明しておこう。少しずつ慣れておいた方がいい。
+</div>
+<p>
+<hr>
+<H4>微分の考え方</H4>
+<div class="safari">
+　まず、速さとは何であろうか。簡単に言えば物体が動いた距離をそれに掛かった時間で割ったものである。しかし長い距離を移動する間、ずっと同じ速さだとは限らない。速さは変化するのが普通である。すると「今の速さ」は幾つだ？ということが気になり始める。しかしどう考えたらいいのだろう。「今この瞬間の速さ」と言われても、ある瞬間には物体はただそこにあるだけであって動いてはいない。
+</div>
+<P>
+<div class="safari">
+　いや、本当に動いていないわけではない。「ほとんど動いていない」だけだ。ごく短い一瞬の時間内に、ごくわずかに動いた距離さえ分かれば速さは計算できる。無限に小さい時間間隔を考えて計算した値はほとんど「その瞬間の速さ」と呼んで差し支えがない。ごく短い時間内では速さだってほとんど変化しないのだから気にすることではない。
+</div>
+<P>
+<div class="safari">
+　つまりごく短い時間間隔<span class="eqinline">\( \Delta t \)</span>と、その間に動いたごく短い距離<span class="eqinline">\( \Delta x \)</span> を考えて<span class="eqinline">\( \Delta x / \Delta t \)</span>という量を作り、<span class="eqinline">\( \Delta t \)</span>を無限に 0 にまで近付けたときのこの量の値を瞬間の速さ<span class="eqinline">\( v \)</span>であると定義して、次のような記号で表すのである。
+</div>
+<div class="display">
+\[
+\begin{align*}
+v = \dif{x}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+　0 で割り算することは数学的に矛盾が出るので反則になるのだが、分母の値を徐々に 0 に近付けて、その値がどうなるかを考えることは許されている。これが微分だ。
+</div>
+<p>
+<hr>
+<H4>微分の応用</H4>
+<div class="safari">
+　この考えを使って、もう一度先ほどの力積の話からやり直してみよう。力の大きさと時間を掛けたものを力積と呼ぶのだったが、先ほどのやり方では物体に加える力<span class="eqinline">\( F \)</span>の大きさが<span class="eqinline">\( t \)</span>秒間ずっと変わらず一定だという仮定の中で計算していたことになる。そんな珍しい状況は受験問題にはよく出てくるが現実には滅多にないことだ。普通は一瞬のパンチにしても、徐々に力が加わり、徐々に力が抜けて行くものだ。
+</div>
+<P>
+<div class="safari">
+　このような現実的な場面にもちゃんとあてはめることのできる議論をするにはどうしたらよいだろうか。ここで先ほどと同じ、微少時間の考えを使うのである。本当に短い一瞬の時間<span class="eqinline">\( \Delta t \)</span>だけに限れば、その間の力<span class="eqinline">\( F \)</span>はほとんど一定だと見なせる。そのごく短時間の力積を<span class="eqinline">\( F\ \Delta t \)</span>と表そう。その力積によって運動量はわずかに変化するから、それを<span class="eqinline">\( \Delta p \)</span>と書こう。つまり、<span class="eqinline">\( F\ \Delta t = \Delta p \)</span>が言える。これを変形して<span class="eqinline">\( F = \Delta p/\Delta t \)</span>と書き、<span class="eqinline">\( \Delta t \)</span>を無限小に近付けた式は、
+</div>
+<div class="display">
+\[
+\begin{align*}
+F = \dif{p}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+だと言える。力とは運動量の時間的な変化率であるという意味だ。ニュートンの運動方程式をこのように書き表すこともあるので心のどこかに留めておいてもらいたい。
+</div>
+<P>
+<div class="safari">
+　しかし運動量が変化するのは、普通は物体の速度変化だけが原因である。物体が壊れなければ質量<span class="eqinline">\( m \)</span>の値が勝手に変化する事はないからである。それで運動量の変化を<span class="eqinline">\( \Delta p = m\ \Delta v \)</span>と書くことができるだろう。つまり、<span class="eqinline">\( F\ \Delta t = m\ \Delta v \)</span>であり、変形すれば<span class="eqinline">\( F = m\ \Delta v/ \Delta t \)</span>であり、前と同じように、
+</div>
+<div class="display">
+\[
+\begin{align*}
+F = m \dif{v}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+という式が出来あがる。<span class="eqinline">\( v \)</span>は移動距離を時間で微分したものであり、ここではそれがさらに微分されているのだから、
+</div>
+<div class="display">
+\[
+\begin{align*}
+F = m \ddif{x}{t}
+\end{align*}
+\]
+</div>
+<div class="safari">
+と書けるのである。この式は加速度が一定でない場合にも使える。力が変化するような場面であっても、そのどの瞬間にも当てはめて使える式だということだ。
+</div>
+<P>
+<div class="safari">
+　加速度を一定値<span class="eqinline">\( a \)</span>で表す幼いやり方は早い内に卒業しておこう。何しろ、力学は生まれた時から微分の考え方を使ってきたのだから。
+</div>
+<p>
+<hr>
+<br>
+<div class="safari">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-format="autorelaxed"
+	data-ad-client="ca-pub-2102965965451578"
+	data-ad-slot="1795778038"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+</div>
+<div class="footer">
+
+<P>
+<hr>
+
+<br>
+<a href="../store/top.html">趣味の物理学書店<a><br><br>
+
+<div class="amazon_ad">
+</div>
+
+<HR>
+<br>
+<br>
+
+[<A href="./mass.html">前の記事へ</A>]　
+[<A href = "./contents.html">力学の目次へ</A>]　
+[<A href="./act_react.html">次の記事へ</A>]
+
+<br>
+<br>
+
+</div>
+
+</BODY>
+</HTML>
